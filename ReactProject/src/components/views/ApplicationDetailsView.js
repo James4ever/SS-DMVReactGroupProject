@@ -181,11 +181,11 @@ class ApplicationDetailsView extends React.Component {
                                     </div>
                                     <div className="form-group fieldDetailed form-inline">
                                         <label>applicationtype:</label>
-                                        <input name="madmv_applicationtype"  type="text" className="form-control" value={appSubject} />
+                                        <input name="madmv_applicationtype" readOnly  type="text" className="form-control" value={appSubject} />
                                     </div>
                                     <div className="form-group fieldDetailed form-inline">
                                         <label>ownerinfo:</label>
-                                        <input name="madmv_ownerinfo" onChange={this.handleChange} type="text" className="form-control" value={application.madmv_ownerinfo} />
+                                        <input name="madmv_ownerinfo" readOnly type="text" className="form-control" value={application.madmv_ownerinfo} />
                                     </div>
                                    
                                     <div className="form-group fieldDetailed form-inline">
@@ -212,7 +212,7 @@ class ApplicationDetailsView extends React.Component {
 
     fetchFromCRM() {
         let cosQuery = DataLoader.generateDynamicsQuerySingleRecord(this.props.match.params.id, "application", "madmv_applicationsubject"
-        , "madmv_applicationtype", "madmv_describeother", "madmv_fee", "madmv_insurancecompany"
+        , "madmv_applicationtype", "madmv_describeother", "madmv_fee", "madmv_insurancecompany","madmv_newzip","madmv_reasonforaddresschange"
         , "madmv_newcity", "madmv_newcountry", "madmv_newstate", "madmv_newstreet1&$expand=madmv_OwnerInfo($select=madmv_fullname)");
         
         
